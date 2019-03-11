@@ -464,7 +464,7 @@ function geo_k(feature, layer) {
     	popup += '　火山：<span id = "pop_moji">' + feature.properties.kazan + '</span>';
     }
     
-    popup += '<iframe src = "test.html" width="100%" height="50px"></iframe>';
+    popup += '<iframe src = "https://linkevery2s.github.io/test/map/js/test.html" width="100%" height="50px"></iframe>';
     layer.bindPopup(popup);
 }
 
