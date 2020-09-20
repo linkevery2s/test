@@ -1,0 +1,42 @@
+h2 {
+	border-bottom: 3px double #8b4513;
+}
+
+.loop_row{
+	z-index: 0;
+}
+
+.loop_row ul{
+	list-style: none;
+}
+
+#header{
+	z-index: 1;
+}
+
+
+.loop_row img:first-child {
+	animation: loop 50s -25s linear infinite;
+}
+
+.loop_row img:last-child {
+	animation: loop2 50s linear infinite;
+}
+
+@keyframes loop {
+	0% {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes loop2 {
+	0% {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-200%);
+	}
+}
