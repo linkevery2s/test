@@ -2,6 +2,42 @@ h2 {
 	border-bottom: 3px double #8b4513;
 }
 
+/* 上へスクロールボタン */
+#page_top{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	background: #3f98ef;
+	opacity: 0.9;
+	border-radius: 50%;
+	z-index: 2;
+}
+#page_top a{
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-decoration: none;
+	border-bottom: none;
+	text-align: center;
+}
+#page_top a::before{
+	font-family: "Font Awesome 5 Free";
+	content: '\f106';
+	font-weight: 900;
+	font-size: 25px;
+	color: #fff;
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 12px;
+	right: 0;
+	left: 0;
+	margin: auto;
+}
+
 .loop_row{
 	z-index: 0;
 }
