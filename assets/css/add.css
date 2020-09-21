@@ -14,6 +14,22 @@ h2:before {
 	color: #8b4513; 
 }
 
+h4 {
+	border-bottom: 2px dotted #8b4513;
+	padding-left: 1.5em;
+	position: relative;
+}
+
+h4:before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f2e7";
+	font-weight: 900;
+	position: absolute;
+	font-size: 1em;
+	left: 0;top: 0;
+	color: #8b4513; 
+}
+
 /* 上へスクロールボタン */
 #page_top{
 	width: 50px;
