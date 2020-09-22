@@ -66,26 +66,24 @@ h4:before {
 	margin: auto;
 }
 
-.loop_row{
-width:100%;
-	z-index: 0;
-}
-
-.loop_row ul{
-	list-style: none;
+#table_right{
+	text-align: right;
 }
 
 #header{
 	z-index: 1;
 }
 
-
-.loop_row img:first-child {
-	animation: loop 50s -25s linear infinite;
+.loop_row {
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+	display: flex;
 }
 
-.loop_row img:last-child {
-	animation: loop2 50s linear infinite;
+.loop_row img {
+	width: auto;
+	height: 100%;
 }
 
 @keyframes loop {
@@ -104,4 +102,12 @@ width:100%;
 	to {
 		transform: translateX(-200%);
 	}
+}
+
+.loop_row img:first-child {
+	animation: loop 150s -75s linear infinite;
+}
+
+.loop_row img:last-child {
+	animation: loop2 150s linear infinite;
 }
