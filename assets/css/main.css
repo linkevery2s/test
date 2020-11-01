@@ -15,7 +15,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
-		font-family: "Hiragino Kaku Gothic OriN","Meiryo",sans-serif;
+		font-family: "Meiryo","Hiragino Kaku Gothic OriN",sans-serif;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -995,9 +995,9 @@ ul.alt li:before {
 		display: inline-block;
 		font-size: 0.8rem;
 		font-weight: 300;
-		height: 2.75rem;
+		height: 3rem;
 		letter-spacing: 0.2rem;
-		line-height: 2.75rem;
+		line-height: 3rem;
 		outline: 0;
 		padding: 0 1.25rem 0 1.35rem;
 		text-align: center;
@@ -1076,7 +1076,7 @@ ul.alt li:before {
 	}
 
 		#col1{
-		background-color: #4169e1;		
+		background-color: #007bbb;
 		}
 		#col1:hover {
 			background-color: rgba(255, 255, 255, 0.075);
@@ -1086,7 +1086,7 @@ ul.alt li:before {
 		}
 
 		#col2{
-		background-color: #00a968;
+		background-color: #007b43;
 		}
 		#col2:hover {
 			background-color: rgba(255, 255, 255, 0.075);
@@ -1096,7 +1096,7 @@ ul.alt li:before {
 		}
 
 		#col3{
-		background-color: #ff6347;
+		background-color: #bb5548;
 		}
 		#col3:hover {
 			background-color: rgba(255, 255, 255, 0.075);
@@ -2915,7 +2915,7 @@ h2.mochi::after {
   content: '';
   width: 12px;
   height: 12px;
-  background-color: #FFFF00;
+  background-color: #ffec47;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -2924,11 +2924,11 @@ h3.point{
 position: relative;
 padding-left: 35px;
 line-height: 1.4;
-background-color: #08088A;
+background-color: #0086CC;
 padding-top: .5em;
 padding-bottom: .5em;
-border-top: 2px solid #F7FE2E;
-border-bottom: 2px solid #F7FE2E;
+border-top: 2px solid #FED300;
+border-bottom: 2px solid #FED300;
 }
 h3.point:before{ font-family: "FontAwesome";
 content: "\f1b3";
@@ -2944,11 +2944,11 @@ h3.cap{
 position: relative;
 padding-left: 35px;
 line-height: 1.4;
-background-color: #08088A;
+background-color: #005baa;
 padding-top: .5em;
 padding-bottom: .5em;
-border-top: 2px solid #FF00FF;
-border-bottom: 2px solid #FF00FF;
+border-top: 2px solid #E86B79;
+border-bottom: 2px solid #E86B79;
 }
 h3.cap:before{ font-family: "FontAwesome";
 content: "\f19d";
@@ -2979,19 +2979,18 @@ h2.gaku {
 position: relative;
 color: #ffffff;
 display: inline-block;
-border-bottom: 1px solid #FFFFFF;
+border-bottom: 2px dotted #FFFFFF;
 left: 15px;
 margin-bottom: 20px;
 }
 h2.gaku:before {
 content: "";
 position: absolute;
-background: #0000cd;
+background: #e7609e;
 width: 50px;
 height: 50px;
 border-radius: 50%;
 top: 50%;
-/* border: dashed 1px white; */
 left: -15px;
 -moz-transform: translateY(-50%);
 -webkit-transform: translateY(-50%);
@@ -3194,7 +3193,7 @@ h3.soku{
 position: relative;
 padding: .5em .5em .1em 1.7em;
 display: inline-block;
-border-bottom: 1px solid #FFFF00;
+border-bottom: 1px solid #ffec47;
 }
 h3.soku::after {
   position: absolute;
