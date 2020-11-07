@@ -1607,6 +1607,11 @@ ul.alt li:before {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
 				
+				article{
+					background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back.png) repeat-y right 10px top;
+					background-size: 2em;
+				}
+				
 		@media screen and (max-width: 736px) {
 
 			#main article {
