@@ -1606,6 +1606,22 @@ ul.alt li:before {
 				#main article .close:active:before {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
+				
+				#intro{
+				background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back1.png) repeat-y right 10px top;
+				}
+				#manual{
+				background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back2.png) repeat-y right 10px top;
+				background-size: 50px;
+				}
+				#sokuho{
+				background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back3.png) repeat-y right 10px top;
+				background-size: 50px;
+				}
+				#manabu{
+				background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back4.png) repeat-y right 10px top;
+				background-size: 50px;
+				}
 
 		@media screen and (max-width: 736px) {
 
