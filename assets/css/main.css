@@ -1578,6 +1578,8 @@ ul.alt li:before {
 				text-indent: 4rem;
 				overflow: hidden;
 				white-space: nowrap;
+				z-index: 10;
+				background-color: rgba(24, 27, 57, 0.8);
 			}
 
 				#main article .close:before {
@@ -2476,6 +2478,8 @@ ul.alt li:before {
 				overflow: hidden;
 				white-space: nowrap;
 				border-bottom: none !important;
+				z-index: 10;
+				background-color: rgba(24, 27, 57, 0.8);
 }
 
 .sns a{border-bottom: none !important;}
@@ -3519,4 +3523,9 @@ height: 1000px;
 
 #kisyou_no a{
 	border: none;
+}
+
+.hal img{
+	width: 50%;
+	border-radius: 50%;
 }
