@@ -268,6 +268,13 @@
 		border-bottom: solid 1px #ffffff;
 		margin: 2.75rem 0;
 	}
+	
+	hr::after{
+		font-family: "FontAwesome";
+		font-weight: bold;
+		content: "\f18c";
+		color: #3eb370;
+	}
 
 	.align-left {
 		text-align: left;
@@ -1579,7 +1586,7 @@ ul.alt li:before {
 				overflow: hidden;
 				white-space: nowrap;
 				z-index: 10;
-				background-color: rgba(24, 27, 57, 0.8);
+				/*background-color: rgba(24, 27, 57, 0.8);*/
 			}
 
 				#main article .close:before {
@@ -1609,10 +1616,10 @@ ul.alt li:before {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
 				
-				article{
+				/*article{
 					background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back.png) repeat-y right 10px top;
-					background-size: 2em;
-				}
+					background-size: 1.5em;
+				}*/
 				
 		@media screen and (max-width: 736px) {
 
@@ -2479,7 +2486,7 @@ ul.alt li:before {
 				white-space: nowrap;
 				border-bottom: none !important;
 				z-index: 10;
-				background-color: rgba(24, 27, 57, 0.8);
+				/*background-color: rgba(24, 27, 57, 0.8);*/
 }
 
 .sns a{border-bottom: none !important;}
@@ -2581,7 +2588,7 @@ ul.alt li:before {
 				}
 
 .fa-book{
-	color: #58FA82;
+	color: #ee7800;
 }
 
 .fa-arrow-circle-right{
@@ -3218,7 +3225,7 @@ h3.soku::after {
   position: relative;
   margin-top: 2em;
   border-radius: 0 10px 10px 10px;
-  background: #FFF;
+  background: #fdeff2;
   color: #000;
 }
 
