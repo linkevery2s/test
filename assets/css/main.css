@@ -2684,7 +2684,7 @@ h2.major::before {
   z-index: 2;
   width: 18px;
   height: 18px;
-  background: #e2041b;
+  background: #F83929;
   opacity: 0.8;
 }
 h2.major::after {
@@ -3537,8 +3537,9 @@ height: 1000px;
 		color: #3eb370;
 	}
 	
-.alink::after{
+/*.alink::after{
 		font-family: "FontAwesome";
 		font-weight: bold;
-		content: " \f08e";
-}
+		content: " \f24d";
+		border: none;
+}*/
