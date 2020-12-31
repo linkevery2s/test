@@ -3554,7 +3554,9 @@ height: 1000px;
 
 /* 背景デザイン */
 #intro{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back.png) repeat-y right 10px top;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back.png) repeat-y right 10px top 20px;
 	background-size: 1.5em;
 	z-index: 5;
+position: absolute;
+
 }
