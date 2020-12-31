@@ -1579,7 +1579,7 @@ ul.alt li:before {
 				overflow: hidden;
 				white-space: nowrap;
 				z-index: 10;
-				/*background-color: rgba(24, 27, 57, 0.8);*/
+				background-color: rgba(24, 27, 57, 0.8);
 			}
 
 				#main article .close:before {
@@ -1599,6 +1599,7 @@ ul.alt li:before {
 					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
 					background-size: 20px 20px;
 					background-repeat: no-repeat;
+					
 				}
 
 				#main article .close:hover:before {
@@ -1608,11 +1609,6 @@ ul.alt li:before {
 				#main article .close:active:before {
 					background-color: rgba(255, 255, 255, 0.175);
 				}
-				
-				/*article{
-					background: linear-gradient(to right, rgba(24, 27, 57, 0.2), rgba(24, 27, 57, 0.2)), url(../../images/back.png) repeat-y right 10px top;
-					background-size: 1.5em;
-				}*/
 				
 		@media screen and (max-width: 736px) {
 
@@ -3554,4 +3550,11 @@ height: 1000px;
   margin-right: 10px;/*はみ出ないように調整*/
   padding: 0.5em 0.5em 0.5em 2em;
 
+}
+
+/* 背景デザイン */
+#intro{
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back.png) repeat-y right 10px top;
+	background-size: 1.5em;
+	z-index: 5;
 }
