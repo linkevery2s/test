@@ -1932,7 +1932,18 @@
 
 									<h2 class="ti">土砂災害マップ</h2>
 									
-									<iframe width="100%" height="400" src="doseki/index.html" frameborder="0" id ="tenki_ui"></iframe>
+										<div class="field">
+											<label for="demo-category">Category</label>
+											<div class="select-wrapper">
+												<select name="demo-category" id="demo-category" onChange= "dosekimap_select()">
+													<option>マップ選択</option>
+													<option value="1">屋内編</option>
+													<option value="2">屋外編</option>
+													<option value="3">乗り物編</option>
+													<option value="4">揺れが収まったら</option>
+												</select>
+											</div>
+										</div>
 									
 									<div class="box2">
 									<table><tr><td colspan="2">

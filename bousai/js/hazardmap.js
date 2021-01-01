@@ -50,6 +50,40 @@ var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri,
 
 }
 
+/* 家屋倒壊等氾濫想定区域（氾濫流） */
+
+function kaokuhanran_ini(){
+
+var tiri = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'
+	});
+
+var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/01_flood_l2_kaokutoukai_hanran_data/{z}/{x}/{y}.png', {
+    opacity: 0.8
+    });
+
+//地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
+var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+
+}
+
+/* 家屋倒壊家屋倒壊等氾濫想定区域（河岸侵食） */
+
+function kaokukawagan_ini(){
+
+var tiri = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'
+	});
+
+var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/01_flood_l2_kaokutoukai_kagan_data/{z}/{x}/{y}.png', {
+    opacity: 0.8
+    });
+
+//地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
+var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+
+}
+
 /* 津波想定区域 */
 
 function tunami_ini(){
