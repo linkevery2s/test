@@ -29,7 +29,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/01_flood_l2_
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -46,7 +46,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/01_flood_l2_
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -63,7 +63,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/01_flood_l2_
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -80,7 +80,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/01_flood_l2_
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -97,7 +97,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/04_tsunami_n
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -114,7 +114,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_dosekiryu
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -131,7 +131,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_kyukeisha
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -148,7 +148,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_jisuberik
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -165,7 +165,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_dosekiryu
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -182,7 +182,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_kyukeisya
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -199,7 +199,7 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_jisuberik
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }
 
@@ -216,6 +216,6 @@ var test = new L.tileLayer('https://disaportaldata.gsi.go.jp/raster/05_nadarekik
     });
 
 //地図を生成（初期表示の中心座標，ズームレベル，レイヤなどをオプションで設定）
-var map = L.map('map_canvas', {center: [35.619, 138.466], zoom: 5,layers: [tiri, test]});
+var map = L.map('map_canvas', {center: [37.619, 138.466], zoom: 5,layers: [tiri, test]});
 
 }

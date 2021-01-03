@@ -440,6 +440,10 @@ sindosokuhou();
 
 rader();
 
+default_dosya_map();
+
+default_kozui_tsunamimap();
+
 }
 
 function eq(){

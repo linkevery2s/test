@@ -1929,21 +1929,67 @@
 								</div>
 									
 									<hr />
+									
+									<h2 class="ti">洪水・津波想定区域</h2>
+									
+										<div class="field">
+											<label for="demo-category">Category</label>
+											<div class="select-wrapper">
+												<select name="demo-category" id="demo-category2" onChange= "kozui_tsunamimap_select()">
+													<option value="1">浸水継続時間（想定最大規模）_国管理河川</option>
+													<option value="2">家屋倒壊等氾濫想定区域（氾濫流）</option>
+													<option value="3">家屋倒壊等氾濫想定区域（河岸侵食）</option>
+													<option value="4">津波浸水想定</option>
+												</select>
+											</div>
+										</div>
+									
+									<br><div id="kozui_tsunamimap"></div>
 
+
+									<div class="box2">
+									<table><tr><td colspan="2">
+									・浸水継続時間（想定最大規模）_国管理河川<br>
+									
+									<span style="background-color: #fb684c;">　　</span>　特別警戒区域<br>
+									<span style="background-color: #fff27e;">　　</span>　警戒区域
+									</td></tr>
+									
+									<tr><td colspan="2">
+									・家屋倒壊等氾濫想定区域（氾濫流・河岸侵食）<br>
+									<span style="background-color: #c04c63;">　　</span>　特別警戒区域<br>
+									<span style="background-color: #edd86f;">　　</span>　警戒区域
+									</td></tr>
+									
+									<tr><td colspan="2">
+									・津波浸水想定<br>
+									<span style="background-color: #ca4c95;">　　</span>　特別警戒区域<br>
+									<span style="background-color: #ffb74c;">　　</span>　警戒区域
+									</td></tr>
+									</table>
+									
+									</div>
+
+
+									<hr />
 									<h2 class="ti">土砂災害マップ</h2>
 									
 										<div class="field">
 											<label for="demo-category">Category</label>
 											<div class="select-wrapper">
-												<select name="demo-category" id="demo-category" onChange= "dosekimap_select()">
-													<option>マップ選択</option>
-													<option value="1">屋内編</option>
-													<option value="2">屋外編</option>
-													<option value="3">乗り物編</option>
-													<option value="4">揺れが収まったら</option>
+												<select name="demo-category" id="demo-category3" onChange= "dosekimap_select()">
+													<option value="1">土砂災害警戒区域（土石流）</option>
+													<option value="2">土砂災害警戒区域（急傾斜地の崩壊）</option>
+													<option value="3">土砂災害警戒区域（地すべり）</option>
+													<option value="4">土石流危険渓流</option>
+													<option value="5">急傾斜地崩壊危険箇所</option>
+													<option value="6">地すべり危険箇所</option>
+													<option value="7">雪崩危険箇所</option>
 												</select>
 											</div>
 										</div>
+										
+										<br><div id="dosya_map"></div>
 									
 									<div class="box2">
 									<table><tr><td colspan="2">
