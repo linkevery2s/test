@@ -2475,7 +2475,7 @@ ul.alt li:before {
 				white-space: nowrap;
 				border-bottom: none !important;
 				z-index: 10;
-				/*background-color: rgba(24, 27, 57, 0.8);*/
+				background-color: rgba(24, 27, 57, 0.8);
 }
 
 .sns a{border-bottom: none !important;}
@@ -3554,37 +3554,43 @@ height: 1000px;
 
 /* 背景デザイン */
 #intro, #search{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/1.png) repeat-y right 10px top;
-	background-size: 1.5em;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/1.png) repeat-y right 1px top;
+	background-size: 1.2em;
 	z-index: 5;
 }
 
 #manual{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/2.png) repeat-y right 10px top;
-	background-size: 1.5em;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/2.png) repeat-y right 1px top;
+	background-size: 1.2em;
 	z-index: 5;
 }
 
 #refuge{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/3.png) repeat-y right 10px top;
-	background-size: 1.5em;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/3.png) repeat-y right 1px top;
+	background-size: 1.2em;
 	z-index: 5;
 }
 
 #manabu{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/4.png) repeat-y right 10px top;
-	background-size: 1.5em;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/4.png) repeat-y right 1px top;
+	background-size: 1.2em;
 	z-index: 5;
 }
 
 #weather{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/5.png) repeat-y right 10px top;
-	background-size: 1.5em;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/5.png) repeat-y right 1px top;
+	background-size: 1.2em;
 	z-index: 5;
 }
 
 #soutei{
-	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/6.png) repeat-y right 10px top;
-	background-size: 1.5em;
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/6.png) repeat-y right 1px top;
+	background-size: 1.2em;
+	z-index: 5;
+}
+
+#type{
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/7.png) repeat-y right 1px top;
+	background-size: 1.2em;
 	z-index: 5;
 }
