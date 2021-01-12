@@ -3594,3 +3594,15 @@ height: 1000px;
 	background-size: 1.2em;
 	z-index: 5;
 }
+
+#need{
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/8.png) repeat-y right 1px top;
+	background-size: 1.2em;
+	z-index: 5;
+}
+
+#mochidashi{
+	background: linear-gradient(to right, rgba(24, 27, 57, 0), rgba(24, 27, 57, 0)), url(../../images/back/9.png) repeat-y right 1px top;
+	background-size: 1.2em;
+	z-index: 5;
+}
