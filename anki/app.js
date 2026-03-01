@@ -5,11 +5,16 @@ let index = 0
 let total = 0
 let correctCount = 0
 
+// CSV読み込み
 async function loadData() {
-  const res = await fetch("data.json")
-  data = await res.json()
+  const res = await fetch("data.csv")
+  const text = await res.text()
 
+  data = parseCSV(text)
+
+  // ジャンル生成
   const genreSelect = document.getElementById("genre")
+  genreSelect.innerHTML = ""
 
   Object.keys(data).forEach(g => {
     const option = document.createElement("option")
@@ -22,12 +27,33 @@ async function loadData() {
   showQuestion()
 }
 
+// CSV → JS変換
+function parseCSV(text) {
+  const lines = text.trim().split("\n")
+  const result = {}
+
+  // ヘッダー削除
+  lines.shift()
+
+  lines.forEach(line => {
+    const [genre, q, a] = line.split(",")
+
+    if (!result[genre]) result[genre] = []
+
+    result[genre].push({
+      q,
+      a
+    })
+  })
+
+  return result
+}
+
 function showQuestion() {
   const item = data[currentGenre][index]
 
   document.getElementById("question").textContent = item.q
   document.getElementById("answer").textContent = item.a
-
   document.querySelector("details").open = false
 }
 
