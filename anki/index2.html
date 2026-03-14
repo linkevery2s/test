@@ -8,13 +8,15 @@
 
 </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+<body class="bg-gray-100">
 
-<div class="max-w-md w-full p-4">
+<div class="max-w-3xl mx-auto p-6">
 
-<h1 class="text-2xl font-bold text-center mb-6">
+<h1 class="text-2xl font-bold mb-6">
 English Sentence Trainer
 </h1>
+
+<!-- 暗記カード -->
 
 <div class="bg-white p-6 rounded-xl shadow">
 
@@ -25,11 +27,12 @@ Sentence
 <p id="sentence" class="text-lg font-semibold mb-4"></p>
 
 <img id="image"
-class="rounded-lg mx-auto max-h-60 mb-4 object-contain">
+class="rounded-lg max-h-72 mb-4 object-contain">
 
 <audio id="audio" controls class="w-full mb-4"></audio>
 
 <details class="mb-4">
+
 <summary class="cursor-pointer text-blue-600">
 日本語訳を見る
 </summary>
@@ -40,7 +43,9 @@ class="rounded-lg mx-auto max-h-60 mb-4 object-contain">
 
 </div>
 
-<div class="flex gap-3 mt-4">
+<!-- ボタン -->
+
+<div class="flex gap-4 mt-4">
 
 <button id="know"
 class="flex-1 bg-green-500 text-white p-3 rounded-lg">
@@ -54,15 +59,48 @@ class="flex-1 bg-red-500 text-white p-3 rounded-lg">
 
 </div>
 
+<div class="flex gap-4 mt-3">
+
 <button id="next"
-class="w-full bg-blue-600 text-white p-3 rounded-lg mt-3">
+class="flex-1 bg-blue-600 text-white p-3 rounded-lg">
 次の文
 </button>
 
 <button id="review"
-class="w-full bg-purple-600 text-white p-3 rounded-lg mt-3">
+class="flex-1 bg-purple-600 text-white p-3 rounded-lg">
 復習モード
 </button>
+
+</div>
+
+<!-- 学習状況 -->
+
+<div class="bg-white p-6 rounded-xl shadow mt-6">
+
+<h2 class="font-bold mb-3">
+学習状況
+</h2>
+
+<div class="grid grid-cols-3 text-center">
+
+<div>
+<p class="text-gray-500 text-sm">回答数</p>
+<p id="total" class="text-2xl font-bold">0</p>
+</div>
+
+<div>
+<p class="text-gray-500 text-sm">正答数</p>
+<p id="correct" class="text-2xl font-bold">0</p>
+</div>
+
+<div>
+<p class="text-gray-500 text-sm">正答率</p>
+<p id="rate" class="text-2xl font-bold">0%</p>
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -72,6 +110,9 @@ let sentences = []
 let reviewList = []
 let index = 0
 
+let total = 0
+let correct = 0
+
 async function loadCSV(){
 
  const res = await fetch("data.csv")
@@ -80,6 +121,7 @@ async function loadCSV(){
  sentences = parseCSV(text)
 
  loadReview()
+ loadStats()
 
  showSentence()
 
@@ -136,7 +178,16 @@ function nextSentence(){
 
 document.getElementById("next").addEventListener("click",nextSentence)
 
-document.getElementById("know").addEventListener("click",nextSentence)
+document.getElementById("know").addEventListener("click",()=>{
+
+ total++
+ correct++
+
+ updateStats()
+
+ nextSentence()
+
+})
 
 document.getElementById("dontknow").addEventListener("click",()=>{
 
@@ -145,6 +196,10 @@ document.getElementById("dontknow").addEventListener("click",()=>{
  reviewList.push(item)
 
  saveReview()
+
+ total++
+
+ updateStats()
 
  nextSentence()
 
@@ -155,7 +210,6 @@ document.getElementById("review").addEventListener("click",()=>{
  if(reviewList.length===0){
 
    alert("復習する文がありません")
-
    return
 
  }
@@ -167,6 +221,38 @@ document.getElementById("review").addEventListener("click",()=>{
  showSentence()
 
 })
+
+function updateStats(){
+
+ const rate = total===0 ? 0 : Math.round(correct/total*100)
+
+ document.getElementById("total").textContent = total
+ document.getElementById("correct").textContent = correct
+ document.getElementById("rate").textContent = rate+"%"
+
+ localStorage.setItem("stats",JSON.stringify({
+   total,
+   correct
+ }))
+
+}
+
+function loadStats(){
+
+ const data = localStorage.getItem("stats")
+
+ if(data){
+
+   const s = JSON.parse(data)
+
+   total = s.total
+   correct = s.correct
+
+   updateStats()
+
+ }
+
+}
 
 function saveReview(){
 
