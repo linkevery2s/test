@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>English Sentence Trainer</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+<div class="max-w-md w-full p-4">
+
+<h1 class="text-2xl font-bold text-center mb-6">
+English Sentence Trainer
+</h1>
+
+<div class="bg-white p-6 rounded-xl shadow">
+
+<h2 class="text-sm text-gray-400 mb-2">
+Sentence
+</h2>
+
+<p id="sentence" class="text-lg font-semibold mb-4"></p>
+
+<img id="image"
+class="rounded-lg mx-auto max-h-60 mb-4 object-contain">
+
+<audio id="audio" controls class="w-full mb-4"></audio>
+
+<details class="mb-4">
+<summary class="cursor-pointer text-blue-600">
+日本語訳を見る
+</summary>
+
+<p id="answer" class="mt-2 text-gray-700"></p>
+
+</details>
+
+</div>
+
+<div class="flex gap-3 mt-4">
+
+<button id="know"
+class="flex-1 bg-green-500 text-white p-3 rounded-lg">
+覚えた
+</button>
+
+<button id="dontknow"
+class="flex-1 bg-red-500 text-white p-3 rounded-lg">
+まだ
+</button>
+
+</div>
+
+<button id="next"
+class="w-full bg-blue-600 text-white p-3 rounded-lg mt-3">
+次の文
+</button>
+
+<button id="review"
+class="w-full bg-purple-600 text-white p-3 rounded-lg mt-3">
+復習モード
+</button>
+
+</div>
+
+<script>
+
+let sentences = []
+let reviewList = []
+let index = 0
+
+async function loadCSV(){
+
+ const res = await fetch("data.csv")
+ const text = await res.text()
+
+ sentences = parseCSV(text)
+
+ loadReview()
+
+ showSentence()
+
+}
+
+function parseCSV(text){
+
+ const lines = text.trim().split("\n")
+ const result = []
+
+ lines.shift()
+
+ lines.forEach(line=>{
+
+   const [sentence,image,audio,answer] = line.split(",")
+
+   result.push({
+     sentence,
+     image,
+     audio,
+     answer
+   })
+
+ })
+
+ return result
+
+}
+
+function showSentence(){
+
+ const item = sentences[index]
+
+ document.getElementById("sentence").textContent = item.sentence
+ document.getElementById("image").src = item.image
+ document.getElementById("audio").src = item.audio
+ document.getElementById("answer").textContent = item.answer
+
+ document.querySelector("details").open=false
+
+}
+
+function nextSentence(){
+
+ index++
+
+ if(index>=sentences.length){
+   index=0
+ }
+
+ showSentence()
+
+}
+
+document.getElementById("next").addEventListener("click",nextSentence)
+
+document.getElementById("know").addEventListener("click",nextSentence)
+
+document.getElementById("dontknow").addEventListener("click",()=>{
+
+ const item = sentences[index]
+
+ reviewList.push(item)
+
+ saveReview()
+
+ nextSentence()
+
+})
+
+document.getElementById("review").addEventListener("click",()=>{
+
+ if(reviewList.length===0){
+
+   alert("復習する文がありません")
+
+   return
+
+ }
+
+ sentences = reviewList
+
+ index = 0
+
+ showSentence()
+
+})
+
+function saveReview(){
+
+ localStorage.setItem("reviewList",JSON.stringify(reviewList))
+
+}
+
+function loadReview(){
+
+ const data = localStorage.getItem("reviewList")
+
+ if(data){
+
+   reviewList = JSON.parse(data)
+
+ }
+
+}
+
+loadCSV()
+
+</script>
+
+</body>
+</html>
