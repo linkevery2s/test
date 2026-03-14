@@ -136,11 +136,20 @@ function parseCSV(text){
  const lines = text.trim().split("\n")
  const result = []
 
+ // ヘッダー削除
  lines.shift()
 
  lines.forEach(line=>{
 
-   const [sentence,image,answer] = line.split(",")
+   // 外側の " を削除
+   line = line.replace(/^"|"$/g,"")
+
+   // "," で分割
+   const parts = line.split('","')
+
+   const sentence = parts[0].replace(/""/g,'"')
+   const image = parts[1]
+   const answer = parts[2].replace(/""/g,'"')
 
    result.push({
      sentence,
@@ -153,7 +162,6 @@ function parseCSV(text){
  return result
 
 }
-
 function showSentence(){
 
  const item = sentences[index]
