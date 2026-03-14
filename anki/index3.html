@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="UTF-8">
+<title>English Sentence Trainer</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100">
+
+<div class="max-w-3xl mx-auto p-6">
+
+<h1 class="text-2xl font-bold mb-6">
+English Sentence Trainer
+</h1>
+
+<!-- 暗記カード -->
+
+<div class="bg-white p-6 rounded-xl shadow">
+
+<h2 class="text-sm text-gray-400 mb-2">
+Sentence
+</h2>
+
+<p id="sentence" class="text-lg font-semibold mb-4"></p>
+
+<button id="speakBtn"
+class="bg-gray-800 text-white px-4 py-2 rounded mb-4">
+🔊 読み上げ
+</button>
+
+<img id="image"
+class="rounded-lg max-h-72 mb-4 object-contain hidden">
+
+<details class="mb-4">
+
+<summary class="cursor-pointer text-blue-600">
+日本語訳を見る
+</summary>
+
+<p id="answer" class="mt-2 text-gray-700"></p>
+
+</details>
+
+</div>
+
+<!-- ボタン -->
+
+<div class="flex gap-4 mt-4">
+
+<button id="know"
+class="flex-1 bg-green-500 text-white p-3 rounded-lg">
+覚えた
+</button>
+
+<button id="dontknow"
+class="flex-1 bg-red-500 text-white p-3 rounded-lg">
+まだ
+</button>
+
+</div>
+
+<div class="flex gap-4 mt-3">
+
+<button id="next"
+class="flex-1 bg-blue-600 text-white p-3 rounded-lg">
+次の文
+</button>
+
+<button id="review"
+class="flex-1 bg-purple-600 text-white p-3 rounded-lg">
+復習モード
+</button>
+
+</div>
+
+<!-- 学習状況 -->
+
+<div class="bg-white p-6 rounded-xl shadow mt-6">
+
+<h2 class="font-bold mb-3">
+学習状況
+</h2>
+
+<div class="grid grid-cols-3 text-center">
+
+<div>
+<p class="text-gray-500 text-sm">回答数</p>
+<p id="total" class="text-2xl font-bold">0</p>
+</div>
+
+<div>
+<p class="text-gray-500 text-sm">正答数</p>
+<p id="correct" class="text-2xl font-bold">0</p>
+</div>
+
+<div>
+<p class="text-gray-500 text-sm">正答率</p>
+<p id="rate" class="text-2xl font-bold">0%</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let sentences = []
+let reviewList = []
+let index = 0
+
+let total = 0
+let correct = 0
+
+async function loadCSV(){
+
+ const res = await fetch("data.csv")
+ const text = await res.text()
+
+ sentences = parseCSV(text)
+
+ loadReview()
+ loadStats()
+
+ showSentence()
+
+}
+
+function parseCSV(text){
+
+ const lines = text.trim().split("\n")
+ const result = []
+
+ lines.shift()
+
+ lines.forEach(line=>{
+
+   const [sentence,image,answer] = line.split(",")
+
+   result.push({
+     sentence,
+     image,
+     answer
+   })
+
+ })
+
+ return result
+
+}
+
+function showSentence(){
+
+ const item = sentences[index]
+
+ document.getElementById("sentence").textContent = item.sentence
+ document.getElementById("answer").textContent = item.answer
+
+ const img = document.getElementById("image")
+
+ if(item.image && item.image.trim() !== ""){
+
+   img.src = item.image
+   img.classList.remove("hidden")
+
+ }else{
+
+   img.removeAttribute("src")
+   img.classList.add("hidden")
+
+ }
+
+ document.querySelector("details").open=false
+
+}
+
+function nextSentence(){
+
+ index++
+
+ if(index >= sentences.length){
+   index = 0
+ }
+
+ showSentence()
+
+}
+
+document.getElementById("next").addEventListener("click",nextSentence)
+
+document.getElementById("know").addEventListener("click",()=>{
+
+ total++
+ correct++
+
+ updateStats()
+
+ nextSentence()
+
+})
+
+document.getElementById("dontknow").addEventListener("click",()=>{
+
+ const item = sentences[index]
+
+ reviewList.push(item)
+
+ saveReview()
+
+ total++
+
+ updateStats()
+
+ nextSentence()
+
+})
+
+document.getElementById("review").addEventListener("click",()=>{
+
+ if(reviewList.length === 0){
+
+   alert("復習する文がありません")
+   return
+
+ }
+
+ sentences = reviewList
+
+ index = 0
+
+ showSentence()
+
+})
+
+document.getElementById("speakBtn").addEventListener("click",()=>{
+
+ const text = sentences[index].sentence
+ speak(text)
+
+})
+
+function speak(text){
+
+ const msg = new SpeechSynthesisUtterance(text)
+
+ msg.lang = "en-US"
+ msg.rate = 0.9
+
+ speechSynthesis.speak(msg)
+
+}
+
+function updateStats(){
+
+ const rate = total===0 ? 0 : Math.round(correct/total*100)
+
+ document.getElementById("total").textContent = total
+ document.getElementById("correct").textContent = correct
+ document.getElementById("rate").textContent = rate + "%"
+
+ localStorage.setItem("stats",JSON.stringify({
+   total,
+   correct
+ }))
+
+}
+
+function loadStats(){
+
+ const data = localStorage.getItem("stats")
+
+ if(data){
+
+   const s = JSON.parse(data)
+
+   total = s.total
+   correct = s.correct
+
+   updateStats()
+
+ }
+
+}
+
+function saveReview(){
+
+ localStorage.setItem("reviewList",JSON.stringify(reviewList))
+
+}
+
+function loadReview(){
+
+ const data = localStorage.getItem("reviewList")
+
+ if(data){
+
+   reviewList = JSON.parse(data)
+
+ }
+
+}
+
+loadCSV()
+
+</script>
+
+</body>
+</html>
