@@ -26,8 +26,7 @@ Sentence
 
 <p id="sentence" class="text-lg font-semibold mb-4"></p>
 
-<img id="image"
-class="rounded-lg max-h-72 mb-4 object-contain">
+<img id="image" class="rounded-lg max-h-72 mb-4 object-contain hidden">
 
 <audio id="audio" controls class="w-full mb-4"></audio>
 
@@ -159,16 +158,13 @@ function showSentence(){
 
  const img = document.getElementById("image")
 
- if(item.image){
-
-   img.src = item.image
-   img.style.display = "block"
-
- }else{
-
-   img.style.display = "none"
-
- }
+if(item.image && item.image.trim() !== ""){
+  img.src = item.image
+  img.classList.remove("hidden")
+}else{
+  img.removeAttribute("src")
+  img.classList.add("hidden")
+}
 
  document.getElementById("audio").src = item.audio
  document.getElementById("answer").textContent = item.answer
