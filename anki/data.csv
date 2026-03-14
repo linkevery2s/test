@@ -1,5 +1,4 @@
-genre,question,answer
-politics,日本の現在の首相は？,高市早苗
-politics,衆議院の任期は？,4年
-economy,GDPとは？,国内総生産
-science,水の化学式は？,H2O
+sentence,image,audio,answer
+I pass the ticket gate at Ichinomiya Station every day.,images/ticketgate.jpg,audio/ticketgate.mp3,私は毎日一宮駅の改札を通ります。
+My daughter goes up the stairs by herself.,images/stairs.jpg,audio/stairs.mp3,私の娘は一人で階段を上がります。
+A panda is eating bamboo.,images/panda.jpg,audio/panda.mp3,パンダが竹を食べています。
