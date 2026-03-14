@@ -156,7 +156,20 @@ function showSentence(){
  const item = sentences[index]
 
  document.getElementById("sentence").textContent = item.sentence
- document.getElementById("image").src = item.image
+
+ const img = document.getElementById("image")
+
+ if(item.image){
+
+   img.src = item.image
+   img.style.display = "block"
+
+ }else{
+
+   img.style.display = "none"
+
+ }
+
  document.getElementById("audio").src = item.audio
  document.getElementById("answer").textContent = item.answer
 
