@@ -1,0 +1,11 @@
+{
+  "title": "English Study Radar",
+  "skills": [
+    {"name": "Listening", "time": 40},
+    {"name": "Reading", "time": 30},
+    {"name": "Writing", "time": 20},
+    {"name": "Speaking", "time": 25},
+    {"name": "Vocabulary", "time": 35},
+    {"name": "Grammar", "time": 15}
+  ]
+}
