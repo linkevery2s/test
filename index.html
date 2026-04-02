@@ -10,19 +10,23 @@
 <h2>ワードクラウド生成</h2>
 
 <textarea id="text" rows="10" cols="50">
-This is a sample text. This text is simple. Word cloud is fun!
+this is a test this is a test word cloud test test data visualization
 </textarea>
 <br>
 <button onclick="generate()">生成</button>
 
-<canvas id="canvas" width="500" height="300"></canvas>
+<div id="cloud" style="width:500px; height:300px; border:1px solid #ccc;"></div>
 
 <script>
 function generate() {
   const text = document.getElementById("text").value;
 
-  // 単語分割（超シンプル版）
   const words = text.toLowerCase().match(/\b\w+\b/g);
+
+  if (!words) {
+    alert("単語が検出できませんでした");
+    return;
+  }
 
   const count = {};
   words.forEach(word => {
@@ -31,8 +35,11 @@ function generate() {
 
   const list = Object.entries(count);
 
-  WordCloud(document.getElementById('canvas'), {
-    list: list
+  WordCloud(document.getElementById('cloud'), {
+    list: list,
+    gridSize: 8,
+    weightFactor: 10,
+    backgroundColor: '#fff'
   });
 }
 </script>
