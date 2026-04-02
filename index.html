@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Word Cloud App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.1.1/wordcloud2.min.js"></script>
+</head>
+<body>
+
+<h2>ワードクラウド生成</h2>
+
+<textarea id="text" rows="10" cols="50">
+This is a sample text. This text is simple. Word cloud is fun!
+</textarea>
+<br>
+<button onclick="generate()">生成</button>
+
+<canvas id="canvas" width="500" height="300"></canvas>
+
+<script>
+function generate() {
+  const text = document.getElementById("text").value;
+
+  // 単語分割（超シンプル版）
+  const words = text.toLowerCase().match(/\b\w+\b/g);
+
+  const count = {};
+  words.forEach(word => {
+    count[word] = (count[word] || 0) + 1;
+  });
+
+  const list = Object.entries(count);
+
+  WordCloud(document.getElementById('canvas'), {
+    list: list
+  });
+}
+</script>
+
+</body>
+</html>
