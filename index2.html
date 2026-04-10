@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Magic Circle Menu</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle, #0a0a1a, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+/* 魔法陣 */
+.magic-circle {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid #00f0ff;
+  box-shadow: 0 0 20px #00f0ff, inset 0 0 20px #00f0ff;
+  animation: rotate 20s linear infinite;
+}
+
+/* 内側の円 */
+.magic-circle::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  border: 1px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+/* 回転 */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* メニューボタン */
+.menu-item {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid #00f0ff;
+  border-radius: 50%;
+  color: #00f0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  background: #00f0ff;
+  color: black;
+  box-shadow: 0 0 15px #00f0ff;
+}
+
+/* 配置（円形） */
+.item1 { top: -35px; left: 50%; transform: translateX(-50%); }
+.item2 { top: 50%; right: -35px; transform: translateY(-50%); }
+.item3 { bottom: -35px; left: 50%; transform: translateX(-50%); }
+.item4 { top: 50%; left: -35px; transform: translateY(-50%); }
+
+/* 中央 */
+.center-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00f0ff;
+  font-size: 18px;
+  pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="magic-circle">
+  <div class="center-text">MENU</div>
+
+  <div class="menu-item item1" onclick="selectMenu('Map')">Map</div>
+  <div class="menu-item item2" onclick="selectMenu('Data')">Data</div>
+  <div class="menu-item item3" onclick="selectMenu('Settings')">Set</div>
+  <div class="menu-item item4" onclick="selectMenu('Help')">Help</div>
+</div>
+
+<script>
+function selectMenu(name) {
+  alert(name + " を選択しました");
+}
+</script>
+
+</body>
+</html>
